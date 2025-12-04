@@ -37,7 +37,7 @@
 		{#if logs.length === 0}
 			<span class="text-surface-500">No logs yet...</span>
 		{:else}
-			{#each logs as log}
+			{#each logs as log, i (i)}
 				<div class="mb-1">{log}</div>
 			{/each}
 		{/if}

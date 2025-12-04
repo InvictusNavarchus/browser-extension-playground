@@ -1,5 +1,17 @@
 <script lang="ts">
-	let { title, description, icon = '🧪' }: { title: string; description: string; icon?: string } = $props();
+	import type { Snippet } from 'svelte';
+
+	let { 
+		title, 
+		description, 
+		icon = '🧪',
+		children
+	}: { 
+		title: string; 
+		description: string; 
+		icon?: string;
+		children: Snippet;
+	} = $props();
 </script>
 
 <div class="test-section">
@@ -14,7 +26,3 @@
 		{@render children()}
 	</div>
 </div>
-
-{#snippet children()}
-	<slot />
-{/snippet}

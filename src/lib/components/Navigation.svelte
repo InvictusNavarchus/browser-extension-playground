@@ -29,25 +29,23 @@
 				</a>
 			</div>
 			
-			<!-- Desktop Navigation -->
-			<div class="hidden lg:flex items-center gap-1">
-				{#each navItems.slice(0, 6) as item}
-					<a 
-						href={item.href}
-						class="px-3 py-2 rounded-lg text-sm font-medium transition-colors {page.url.pathname === item.href ? 'bg-primary-100 text-primary-700' : 'text-surface-600 hover:bg-surface-100 hover:text-surface-900'}"
-					>
-						<span class="mr-1">{item.icon}</span>
-						{item.label}
-					</a>
-				{/each}
-				
-				<!-- More dropdown -->
+		<!-- Desktop Navigation -->
+		<div class="hidden lg:flex items-center gap-1">
+			{#each navItems.slice(0, 6) as item, i (i)}
+				<a 
+					href={item.href}
+					class="px-3 py-2 rounded-lg text-sm font-medium transition-colors {page.url.pathname === item.href ? 'bg-primary-100 text-primary-700' : 'text-surface-600 hover:bg-surface-100 hover:text-surface-900'}"
+				>
+					<span class="mr-1">{item.icon}</span>
+					{item.label}
+				</a>
+			{/each}				<!-- More dropdown -->
 				<div class="relative group">
 					<button class="px-3 py-2 rounded-lg text-sm font-medium text-surface-600 hover:bg-surface-100 hover:text-surface-900 transition-colors">
 						More ▼
 					</button>
 					<div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-surface-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-						{#each navItems.slice(6) as item}
+						{#each navItems.slice(6) as item, i (i)}
 							<a 
 								href={item.href}
 								class="block px-4 py-2 text-sm text-surface-700 hover:bg-surface-50 first:rounded-t-lg last:rounded-b-lg {page.url.pathname === item.href ? 'bg-primary-50 text-primary-700' : ''}"
@@ -82,7 +80,7 @@
 	{#if mobileMenuOpen}
 		<div class="lg:hidden border-t border-surface-200 bg-white">
 			<div class="px-4 py-2 space-y-1">
-				{#each navItems as item}
+				{#each navItems as item, i (i)}
 					<a 
 						href={item.href}
 						onclick={() => mobileMenuOpen = false}
