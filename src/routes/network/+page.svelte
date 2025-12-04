@@ -241,7 +241,7 @@
 						<textarea 
 							id="fetch-body"
 							class="input min-h-20"
-							placeholder='{"key": "value"}'
+							placeholder={'{"key": "value"}'}
 							bind:value={fetchBody}
 						></textarea>
 					</div>
