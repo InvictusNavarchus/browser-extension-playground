@@ -66,133 +66,23 @@
 }
 
 @utility btn-primary {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-radius: 0.5rem;
-	font-weight: 500;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 200ms;
-	cursor: pointer;
-	background-color: var(--color-primary-600);
-	color: white;
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	@apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 shadow-sm;
 
 	&:hover {
-		background-color: var(--color-primary-700);
 		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-	}
-
-	&:active {
-		background-color: var(--color-primary-800);
-	}
-
-	&:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
 	}
 }
 
 @utility btn-secondary {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-radius: 0.5rem;
-	font-weight: 500;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 200ms;
-	cursor: pointer;
-	background-color: var(--color-surface-200);
-	color: var(--color-surface-800);
-
-	&:hover {
-		background-color: var(--color-surface-300);
-	}
-
-	&:active {
-		background-color: var(--color-surface-400);
-	}
-
-	&:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
+	@apply btn bg-surface-200 text-surface-800 hover:bg-surface-300 active:bg-surface-400;
 }
 
 @utility btn-danger {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-radius: 0.5rem;
-	font-weight: 500;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 200ms;
-	cursor: pointer;
-	background-color: rgb(220 38 38);
-	color: white;
-
-	&:hover {
-		background-color: rgb(185 28 28);
-	}
-
-	&:active {
-		background-color: rgb(153 27 27);
-	}
-
-	&:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
+	@apply btn bg-red-600 text-white hover:bg-red-700 active:bg-red-800;
 }
 
 @utility btn-success {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-radius: 0.5rem;
-	font-weight: 500;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 200ms;
-	cursor: pointer;
-	background-color: rgb(22 163 74);
-	color: white;
-
-	&:hover {
-		background-color: rgb(16 185 129);
-	}
-
-	&:active {
-		background-color: rgb(5 150 105);
-	}
-
-	&:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
+	@apply btn bg-green-600 text-white hover:bg-green-700 active:bg-green-800;
 }
 
 @utility card {
@@ -263,66 +153,23 @@
 }
 
 @utility badge-primary {
-	display: inline-flex;
-	align-items: center;
-	padding-left: 0.625rem;
-	padding-right: 0.625rem;
-	padding-top: 0.125rem;
-	padding-bottom: 0.125rem;
-	border-radius: 9999px;
-	font-size: 0.75rem;
-	font-weight: 500;
-	background-color: var(--color-primary-100);
-	color: var(--color-primary-800);
+	@apply badge bg-primary-100 text-primary-800;
 }
 
 @utility badge-success {
-	display: inline-flex;
-	align-items: center;
-	padding-left: 0.625rem;
-	padding-right: 0.625rem;
-	padding-top: 0.125rem;
-	padding-bottom: 0.125rem;
-	border-radius: 9999px;
-	font-size: 0.75rem;
-	font-weight: 500;
-	background-color: rgb(220 252 231);
-	color: rgb(22 163 74);
+	@apply badge bg-green-100 text-green-800;
 }
 
 @utility badge-warning {
-	display: inline-flex;
-	align-items: center;
-	padding-left: 0.625rem;
-	padding-right: 0.625rem;
-	padding-top: 0.125rem;
-	padding-bottom: 0.125rem;
-	border-radius: 9999px;
-	font-size: 0.75rem;
-	font-weight: 500;
-	background-color: rgb(254 252 232);
-	color: rgb(161 98 7);
+	@apply badge bg-yellow-100 text-yellow-800;
 }
 
 @utility badge-danger {
-	display: inline-flex;
-	align-items: center;
-	padding-left: 0.625rem;
-	padding-right: 0.625rem;
-	padding-top: 0.125rem;
-	padding-bottom: 0.125rem;
-	border-radius: 9999px;
-	font-size: 0.75rem;
-	font-weight: 500;
-	background-color: rgb(254 226 226);
-	color: rgb(220 38 38);
+	@apply badge bg-red-100 text-red-800;
 }
 
 @utility test-section {
-	background-color: white;
-	border-radius: 0.75rem;
-	border: 1px solid var(--color-surface-200);
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	@apply card;
 	padding: 1.5rem;
 	margin-bottom: 1.5rem;
 }
