@@ -19,7 +19,7 @@
 		<span class="text-2xl">{icon}</span>
 		<div>
 			<h3 class="section-subtitle">{title}</h3>
-			<p class="text-surface-600 text-sm">{description}</p>
+			<p class="text-surface-600 dark:text-surface-400 text-sm">{description}</p>
 		</div>
 	</div>
 	<div class="space-y-4">

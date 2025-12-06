@@ -31,15 +31,28 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+		color-scheme: light;
+	}
+
+	html.dark {
+		color-scheme: dark;
 	}
 	
 	body {
-		@apply bg-surface-50 text-surface-900 antialiased;
+		@apply bg-surface-50 text-surface-900 antialiased transition-colors duration-300;
 		font-family: var(--font-sans);
+	}
+
+	html.dark body {
+		@apply bg-surface-950 text-surface-50;
 	}
 
 	::selection {
 		@apply bg-primary-500 text-white;
+	}
+
+	html.dark ::selection {
+		@apply bg-primary-600 text-white;
 	}
 }
 
@@ -75,6 +88,10 @@
 
 @utility btn-secondary {
 	@apply btn bg-surface-200 text-surface-800 hover:bg-surface-300 active:bg-surface-400;
+
+	html.dark & {
+		@apply bg-surface-700 text-surface-100 hover:bg-surface-600 active:bg-surface-500;
+	}
 }
 
 @utility btn-danger {
@@ -90,6 +107,12 @@
 	border-radius: 0.75rem;
 	border: 1px solid var(--color-surface-200);
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+	html.dark & {
+		background-color: #1e293b;
+		border-color: #334155;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+	}
 }
 
 @utility input {
@@ -106,8 +129,18 @@
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 
+	html.dark & {
+		border-color: #475569;
+		background-color: #0f172a;
+		color: #f1f5f9;
+	}
+
 	&::placeholder {
 		color: var(--color-surface-400);
+	}
+
+	html.dark &::placeholder {
+		color: #64748b;
 	}
 
 	&:focus {
@@ -115,6 +148,10 @@
 		outline-offset: 2px;
 		box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color-primary-500);
 		border-color: transparent;
+	}
+
+	html.dark &:focus {
+		box-shadow: 0 0 0 2px #0f172a, 0 0 0 4px var(--color-primary-500);
 	}
 }
 
@@ -124,6 +161,10 @@
 	font-weight: 500;
 	color: var(--color-surface-700);
 	margin-bottom: 0.25rem;
+
+	html.dark & {
+		color: #cbd5e1;
+	}
 }
 
 @utility section-title {
@@ -131,6 +172,10 @@
 	font-weight: 700;
 	color: var(--color-surface-900);
 	margin-bottom: 1rem;
+
+	html.dark & {
+		color: #f1f5f9;
+	}
 }
 
 @utility section-subtitle {
@@ -138,6 +183,10 @@
 	font-weight: 600;
 	color: var(--color-surface-800);
 	margin-bottom: 0.75rem;
+
+	html.dark & {
+		color: #e2e8f0;
+	}
 }
 
 @utility badge {
@@ -154,18 +203,34 @@
 
 @utility badge-primary {
 	@apply badge bg-primary-100 text-primary-800;
+
+	html.dark & {
+		@apply bg-primary-900 text-primary-200;
+	}
 }
 
 @utility badge-success {
 	@apply badge bg-green-100 text-green-800;
+
+	html.dark & {
+		@apply bg-green-900 text-green-200;
+	}
 }
 
 @utility badge-warning {
 	@apply badge bg-yellow-100 text-yellow-800;
+
+	html.dark & {
+		@apply bg-yellow-900 text-yellow-200;
+	}
 }
 
 @utility badge-danger {
 	@apply badge bg-red-100 text-red-800;
+
+	html.dark & {
+		@apply bg-red-900 text-red-200;
+	}
 }
 
 @utility test-section {
