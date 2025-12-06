@@ -1,23 +1,8 @@
 <script lang="ts">
 	import './layout.css';
 	import { Navigation } from '$lib';
-	import { theme } from '$lib/stores/theme';
 
 	let { children } = $props();
-
-	$effect(() => {
-		const unsubscribe = theme.subscribe((t) => {
-			if (typeof document !== 'undefined') {
-				const html = document.documentElement;
-				if (t === 'dark') {
-					html.classList.add('dark');
-				} else {
-					html.classList.remove('dark');
-				}
-			}
-		});
-		return () => unsubscribe?.();
-	});
 </script>
 
 <svelte:head>

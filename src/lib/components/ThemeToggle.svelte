@@ -1,13 +1,7 @@
 <script lang="ts">
 	import { theme } from '$lib/stores/theme';
 
-	let currentTheme = $state('light');
-
-	$effect(() => {
-		theme.subscribe((t) => {
-			currentTheme = t;
-		});
-	});
+	let currentTheme = $derived($theme);
 </script>
 
 <button

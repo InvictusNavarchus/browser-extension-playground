@@ -23,38 +23,22 @@ function createThemeStore() {
 		toggle: () => {
 			update((theme: Theme) => {
 				const newTheme = theme === 'light' ? 'dark' : 'light';
+				
 				if (typeof window !== 'undefined') {
 					localStorage.setItem('theme', newTheme);
-					updateHtmlClass(newTheme);
+					const html = document.documentElement;
+					if (newTheme === 'dark') {
+						html.classList.add('dark');
+					} else {
+						html.classList.remove('dark');
+					}
 				}
+				
 				return newTheme;
 			});
-		},
-		set: (theme: Theme) => {
-			if (typeof window !== 'undefined') {
-				localStorage.setItem('theme', theme);
-				updateHtmlClass(theme);
-			}
 		},
 	};
 }
 
-function updateHtmlClass(theme: Theme) {
-	if (typeof document !== 'undefined') {
-		const html = document.documentElement;
-		if (theme === 'dark') {
-			html.classList.add('dark');
-		} else {
-			html.classList.remove('dark');
-		}
-	}
-}
-
 export const theme = createThemeStore();
 
-// Initialize on client
-if (typeof window !== 'undefined') {
-	theme.subscribe((t) => {
-		updateHtmlClass(t);
-	});
-}

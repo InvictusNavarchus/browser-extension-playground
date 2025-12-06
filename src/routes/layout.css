@@ -26,6 +26,8 @@
 	--color-surface-800: #1e293b;
 	--color-surface-900: #0f172a;
 	--color-surface-950: #020617;
+	
+	color-scheme: light;
 }
 
 @layer base {
@@ -36,6 +38,17 @@
 
 	html.dark {
 		color-scheme: dark;
+		--color-surface-50: #f1f5f9;
+		--color-surface-100: #e2e8f0;
+		--color-surface-200: #cbd5e1;
+		--color-surface-300: #94a3b8;
+		--color-surface-400: #64748b;
+		--color-surface-500: #475569;
+		--color-surface-600: #334155;
+		--color-surface-700: #1e293b;
+		--color-surface-800: #0f172a;
+		--color-surface-900: #020617;
+		--color-surface-950: #0a0e18;
 	}
 	
 	body {
